@@ -1,0 +1,70 @@
+<div class=" uk-padding ">
+    <div class="uk-card uk-card-default">
+        <div class="uk-card-header">
+            <div class="uk-grid-small uk-flex-middle" uk-grid>
+                <div class="uk-width-auto">
+                    <img class="uk-border-circle" width="200" height="200" src="{{data.image}}">
+                    <br><br>
+                    <input type="file" (change)="upload($event)" accept=".png,.jpg"/>
+                </div>
+                <div class="uk-width-expand">
+                    <h3 class="uk-card-title uk-margin-remove-bottom">Email: {{data.email}}</h3>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="uk-card-body">
+            <p>Name:{{data.name}}</p>
+            <p>phone :  {{data.phone}}</p>
+            <p>job :  {{data.job}}</p>
+            <p>address : {{data.address}}</p>
+            <p>city :  {{data.city}}</p>
+            <p>age :  {{data.age}}</p>
+        </div>
+        <div class="uk-card-footer">
+            <a href="#" class="uk-button uk-button-text" uk-toggle="target: #modal-example" >Edit</a>
+
+            <!-- Model For Edit -->
+            
+            <div id="modal-example" uk-modal>
+                <div class="uk-modal-dialog uk-modal-body">
+                    <fieldset class="uk-fieldset">
+                        <div class="uk-margin">
+                            <input class="uk-input" type="text" placeholder="اسمك" name="name"  [(ngModel)]="data.name">
+                        </div>
+                        <div class="uk-margin">
+                            <input class="uk-input" type="text" placeholder="عمرك" name="age"  [(ngModel)]="data.age">
+                        </div>
+                        <div class="uk-margin">
+                            <input class="uk-input" type="text" placeholder="رقم الهاتف " name="phone"  [(ngModel)]="data.phone">
+                        </div>
+                        <div class="uk-margin">
+                            <input class="uk-input" type="text" placeholder="العنوان" name="address"  [(ngModel)]="data.address">
+                        </div>
+                        <div class="uk-margin">
+                            <input class="uk-input" type="text" placeholder="المدينة" name="city"  [(ngModel)]="data.city">
+                        </div>
+                        <div class="uk-margin">
+                            <textarea class="uk-textarea" rows="5" placeholder="المهنة" name="job"  [(ngModel)]="data.job"></textarea>
+                        </div>
+                
+                        <!-- <div class="uk-margin">
+                            <button class="uk-button uk-button-primary" (click)="insertSkill()">خزن</button>
+                        </div> -->
+                       
+                    </fieldset>
+                    <p class="uk-text-right">
+                        <button class="uk-button uk-button-default uk-modal-close" type="button">Cancel</button>
+                        <button class="uk-button uk-button-primary uk-modal-close" type="button" (click)="onEdit()">Save</button>
+                    </p>
+                </div>
+                
+            </div>
+        
+            <!-- <p>phone: {{data.phone}}</p>
+            <p>Province: {{data.province}}</p>
+            <p>Price: {{data.price}}</p> -->
+        </div>
+    </div>
+  </div>
+  {{data.email}}
